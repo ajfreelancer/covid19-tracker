@@ -9,9 +9,10 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "19px",
         fontFamily: "Montserrat",
         fontStyle: "normal",
-        fontWeight: "bold",
+        fontWeight: "600",
         color: "#fafafa",
-        borderRadius: "15px"
+        borderRadius: "15px",
+        boxShadow: "0px 0px 5px #BBBBBB"
     },
     stats: {
         fontSize: "36px",
@@ -45,7 +46,7 @@ function GlobalStatusPaper({ color, status, data }) {
                     TOTAL CASES
                 </div>
                 <div className={classes.stats}>
-                    {data}
+                    {data.toLocaleString()}
                 </div>
             </Paper>
         </div>

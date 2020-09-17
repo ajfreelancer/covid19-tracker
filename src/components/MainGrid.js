@@ -48,7 +48,7 @@ export default function CenteredGrid() {
 
   async function fetchData(){
       setIsFetchingData(true);
-      let rawdata = await fetch("https://thevirustracker.com/free-api?global=stats");
+      let rawdata = await fetch("https://api.covid19api.com/summary");
       let data = await rawdata.json();
       setGlobalStats(data);
       setIsFetchingData(false);
@@ -118,16 +118,16 @@ export default function CenteredGrid() {
           wrap="nowrap"
         >
           <Grid item xs={3}>
-            <GlobalStatusPaper color="#2F80ED" status="OK" data={globalStats.results[0].total_cases}/>
+            <GlobalStatusPaper color="#2F80ED" status="OK" data={globalStats.Global.TotalConfirmed}/>
           </Grid>
           <Grid item xs={3}>
-            <GlobalStatusPaper color="#00D232" status="OK" data={globalStats.results[0].total_recovered}/>
+            <GlobalStatusPaper color="#00D232" status="OK" data={globalStats.Global.TotalRecovered}/>
           </Grid>
           <Grid item xs={3}>
-            <GlobalStatusPaper color="#F7A912" status="OK" data={globalStats.results[0].total_unresolved}/>
+            <GlobalStatusPaper color="#F7A912" status="OK" data={globalStats.Global.NewConfirmed}/>
           </Grid>
           <Grid item xs={3}>
-            <GlobalStatusPaper color="#F23847" status="OK" data={globalStats.results[0].total_deaths}/>
+            <GlobalStatusPaper color="#F23847" status="OK" data={globalStats.Global.TotalDeaths}/>
           </Grid>
         </Grid>
       </Grid>
