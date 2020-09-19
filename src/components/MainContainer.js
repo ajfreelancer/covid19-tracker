@@ -4,7 +4,7 @@ import MainGrid from './MainGrid'
 
 const useStyles = makeStyles((theme) => ({
   mainContainer:{
-      height: "83vh"
+      height: "87vh"
   }
 }));
 

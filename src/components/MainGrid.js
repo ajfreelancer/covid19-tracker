@@ -75,6 +75,7 @@ export default function CenteredGrid() {
 
   if(isFetchingData){
     return(
+      <>
         <div className={classes.root}>
             <Grid container spacing={3} style={{margin: "0"}}>
             <Grid item xs={12}>
@@ -96,6 +97,8 @@ export default function CenteredGrid() {
             </Grid>
             </Grid>
         </div>
+        <Footer />
+      </>
     )
   }
 
