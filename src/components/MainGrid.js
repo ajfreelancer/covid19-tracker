@@ -100,7 +100,8 @@ export default function CenteredGrid() {
   }
 
   return (
-    <div className={classes.root}>
+    <>
+      <div className={classes.root}>
       <Grid container className={classes.topLevelContainer}>
         <Grid item xs={12} className={classes.heroGrid}>
             <div className={classes.heroText}>
@@ -123,7 +124,8 @@ export default function CenteredGrid() {
         </Grid>
         <SectionTwo />
       </Grid>
-      <Footer />
     </div>
+      <Footer />
+    </>
   );
 }
