@@ -65,7 +65,7 @@ function SectionTwo() {
             //Getting the Timeline data
             let { PrevDate, ToDate } = getTheDates();
             let grawdata = await fetch(`https://api.covid19api.com/world?from=${PrevDate}&to=${ToDate}`);
-            console.log(`https://api.covid19api.com/world?from=${PrevDate}&to=${ToDate}`)
+            // console.log(`https://api.covid19api.com/world?from=${PrevDate}&to=${ToDate}`)
             let gdata = await grawdata.json();
             setGraphData(gdata);
 

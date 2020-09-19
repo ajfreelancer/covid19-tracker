@@ -9,7 +9,7 @@ export default function Chart({data}) {
     let wwidth = 300;
 
     function updateGraphSize(){
-      console.log(window.innerWidth)
+      // console.log(window.innerWidth)
       if(window.innerWidth < 510){
         wwidth = 480;
       }
@@ -25,13 +25,13 @@ export default function Chart({data}) {
       if(window.innerWidth > 1230){
         wwidth = 770;
       }
-      console.log(wwidth)
+      // console.log(wwidth)
     }
 
     updateGraphSize();
 
     window.onresize = function(event) {
-      console.log(window.innerWidth)
+      // console.log(window.innerWidth)
       updateGraphSize();
     };
 
@@ -74,7 +74,7 @@ export default function Chart({data}) {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Line type="monotone" dataKey="Active" stroke="#F23847" activeDot={{ r: 8 }} strokeWidth={3}/>
+        <Line type="monotone" dataKey="Active" stroke="#F23847" activeDot={{r: 8}} strokeWidth={3}/>
       </LineChart>
     );
 }
