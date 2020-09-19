@@ -8,7 +8,7 @@ function Footer() {
             padding: "20px 0",
             fontFamily: "Montserrat",
             color: "white",
-            fontWeight: '500'
+            fontWeight: '500',
              }}>
             DESIGNED AND DEVELOPED BY <strong>AJ</strong>
         </div>

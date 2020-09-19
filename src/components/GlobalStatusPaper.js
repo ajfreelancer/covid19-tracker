@@ -27,7 +27,7 @@ function GlobalStatusPaper({ color, statName, data }) {
     
     if(!data){
         return (
-            <Paper elevation={0} className={classes.paper} style={{backgroundColor: color}}>
+            <Paper elevation={0} className={`${classes.paper} globalStatsPaper`} style={{backgroundColor: color}}>
                 <div>
                     {statName}
                 </div>
@@ -39,7 +39,7 @@ function GlobalStatusPaper({ color, statName, data }) {
     }
 
     return (
-            <Paper elevation={0} className={classes.paper} style={{backgroundColor: color}}>
+            <Paper elevation={0} className={`${classes.paper} globalStatsPaper`} style={{backgroundColor: color}}>
                 <div>
                     {statName}
                 </div>

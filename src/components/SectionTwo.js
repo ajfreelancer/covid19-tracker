@@ -10,14 +10,14 @@ const useStyles = makeStyles((theme) => ({
       width: "400px",
     },
     sectionTwo:{
-      margin: "15px 23px"
+      margin: `${window.innerWidth<510?30:15}px ${window.innerWidth<510?0:23}px`
     },
     leftContainer:{
       width: 410,
     },
     rightContainer:{
         width: 750,
-        margin: 0
+        margin: `${window.innerWidth<510?20:0}px 0 0 0`
     },
     timeLineText:{
         textAlign: "center",
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 function SectionTwo() {
     const classes = useStyles();
     let [localStats, setLocalStats] = useState("");
-    let [isFetchingData, setIsFetchingData] = useState(true);
+    let [, setIsFetchingData] = useState(true);
     let [GraphData, setGraphData] = useState("");
     let [countryData, setCountryData] = useState([
         { color: "#2F80ED", title: "TOTAL CASES" },
@@ -42,12 +42,33 @@ function SectionTwo() {
         { color: "#F23847", title: "DEATHS" },
     ])
 
+    function getTheDates(){
+        var d = new Date();
+        d.setDate(d.getDate() - 20);
+        let PrevDate = (new Date(d.toString().split('GMT')[0]+' UTC').toISOString().split('.')[0]).split("T")[0]
+        let ToDate = (new Date(new Date().toString().split('GMT')[0]+' UTC').toISOString().split('.')[0]).split("T")[0];
+        return({
+            PrevDate: PrevDate,
+            ToDate: ToDate
+        })
+    }
+
     useEffect(() => {
         async function fetchData(){
             setIsFetchingData(true);
+
+            //Getting the numeric data
             let rawdata = await fetch("https://api.covid19api.com/summary");
             let data = await rawdata.json();
             setLocalStats(data);
+
+            //Getting the Timeline data
+            let { PrevDate, ToDate } = getTheDates();
+            let grawdata = await fetch(`https://api.covid19api.com/world?from=${PrevDate}&to=${ToDate}`);
+            console.log(`https://api.covid19api.com/world?from=${PrevDate}&to=${ToDate}`)
+            let gdata = await grawdata.json();
+            setGraphData(gdata);
+
             setIsFetchingData(false);
         }
         fetchData();
@@ -100,7 +121,7 @@ function SectionTwo() {
             
           </Grid>
           <Grid container direction="column" spacing={1} className={classes.rightContainer}>
-            <Grid item className={classes.timeLineText}>
+            <Grid item className={classes.timeLineText} style={{marginTop: `${window.innerWidth>998?0:20}px`}}>
                 TIMELINE
             </Grid>
             <Grid item className={classes.graph}>

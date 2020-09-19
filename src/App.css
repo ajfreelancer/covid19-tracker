@@ -1,6 +1,7 @@
 html{
     background-image: url("./images/bgImg.png");
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: 100%;
     font-family: Arial, Helvetica, sans-serif ;
 }
@@ -10,3 +11,84 @@ html{
 .MuiNativeSelect-icon{
     color: #333333 !important;
 }
+@media only screen and (max-width: 1920px) {
+    .makeStyles-root-10 {
+        margin: 0 0px !important; 
+    }
+    .makeStyles-paper-17 {
+        width: 270px !important;
+        padding: 40px 0 !important;    
+    }  
+    .makeStyles-leftContainer-21 {
+        width: 400px !important;
+    }
+    .makeStyles-rightContainer-22 {
+        width: 755px !important;
+    }
+}
+@media only screen and (max-width: 1230px) {
+    .makeStyles-root-10 {
+        margin: 0 0px !important; 
+    }
+    .makeStyles-paper-17 {
+        width: 250px !important;
+        padding: 40px 0 !important;    
+    }  
+    .makeStyles-leftContainer-21 {
+        width: 400px !important;
+    }
+    .makeStyles-rightContainer-22 {
+        width: 680px !important;
+    }
+}
+@media only screen and (max-width: 1150px) {
+    .makeStyles-root-10 {
+        margin: 0 0px !important; 
+    }
+    .makeStyles-paper-17 {
+        width: 215px !important;
+        padding: 40px 0 !important;    
+    }  
+    .makeStyles-leftContainer-21 {
+        width: 351px !important;
+    }
+    .makeStyles-rightContainer-22 {
+        width: 592px !important;
+    }
+}
+@media only screen and (max-width: 988px) {
+    .makeStyles-paper-17 {
+        width: 300px !important;
+        padding: 40px 0 !important;    
+    }
+    .makeStyles-leftContainer-21 {
+        width: 65% !important;
+    }
+    .makeStyles-rightContainer-22 {
+        width: 599px !important;
+    }
+}
+@media only screen and (max-width: 760px) {
+    .globalStatsPaper {
+        width: 100vw !important;
+    }
+    .globalStatusPaperGridItem{
+        padding: 2px !important;
+    }
+    .makeStyles-heroGrid-15 {
+        padding-bottom: 15px !important;
+    }
+    .makeStyles-leftContainer-21 {
+        width: 88% !important;
+    }
+    .makeStyles-statsGrid-16{
+        margin: 0 !important;
+    }
+    .makeStyles-graph-24{
+        margin: auto !important;
+    }
+  }
+
+/* .MuiGrid-item {
+    width: 100%;
+} */

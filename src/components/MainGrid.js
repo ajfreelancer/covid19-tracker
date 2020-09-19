@@ -3,12 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import GlobalStatusPaper from './GlobalStatusPaper'
 import SectionTwo from './SectionTwo';
-// import Footer from './Footer';
+import Footer from './Footer';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    margin: "0 75px"
+    margin: `0 ${window.innerWidth<510?30:75}px`
   },
   heroText:{
     textAlign: "center",
@@ -88,7 +88,7 @@ export default function CenteredGrid() {
             <Grid container justify="center" spacing={3} className={classes.statsGrid}>
               { globalStats.map( (val, index) => {
                 return(
-                  <Grid key={index} item>
+                  <Grid key={index} item className="globalStatusPaperGridItem">
                     <GlobalStatusPaper color={val.color} statName={val.title}/>
                   </Grid>
                 )
@@ -114,7 +114,7 @@ export default function CenteredGrid() {
           { 
             globalStats.map( (val, index) => {
             return(
-              <Grid key={index} item>
+              <Grid key={index} item className="globalStatusPaperGridItem">
                 <GlobalStatusPaper color={val.color} statName={val.title} data={val.data}/>
               </Grid>
             )
@@ -123,6 +123,7 @@ export default function CenteredGrid() {
         </Grid>
         <SectionTwo />
       </Grid>
+      <Footer />
     </div>
   );
 }
