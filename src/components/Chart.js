@@ -11,10 +11,10 @@ export default function Chart({data}) {
     function updateGraphSize(){
       // console.log(window.innerWidth)
       if(window.innerWidth < 510){
-        wwidth = 480;
+        wwidth = 400;
       }
       if(window.innerWidth > 510 && window.innerWidth < 626){
-        wwidth = 480;
+        wwidth = 400;
       }
       if(window.innerWidth > 626 && window.innerWidth < 1150){
         wwidth = 600;
