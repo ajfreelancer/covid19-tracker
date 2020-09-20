@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
       width: "400px",
     },
     sectionTwo:{
-      margin: `${window.innerWidth<510?30:15}px ${window.innerWidth<510?0:23}px`
+      margin: `${window.innerWidth<510?30:15}px ${window.innerWidth<510?0:23}px ${window.innerWidth<510?30:30}px ${window.innerWidth<510?0:23}px`
     },
     leftContainer:{
       width: 410,
